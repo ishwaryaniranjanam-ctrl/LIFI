@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Li-Fi System — Optical Data Transfer Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <div class="brand-icon">
+      <span class="photon"></span>
+      <span class="photon"></span>
+      <span class="photon"></span>
+    </div>
+    <span class="brand-text">Li<span class="accent">Fi</span>OS</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home" class="nav-link active">Home</a></li>
+    <li><a href="#architecture" class="nav-link">Architecture</a></li>
+    <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+    <li><a href="#performance" class="nav-link">Performance</a></li>
+    <li><a href="#charts" class="nav-link">Analytics</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+      <span class="toggle-icon" id="toggleIcon">☀</span>
+    </button>
+    <div class="signal-indicator">
+      <span class="sig-dot"></span>
+      <span class="sig-label">ONLINE</span>
+    </div>
+  </div>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════ HOME ═══════════════════ -->
+<section class="section hero-section" id="home">
+  <div class="hero-bg">
+    <div class="beam-grid">
+      <div class="beam" style="--d:0s;--l:10%"></div>
+      <div class="beam" style="--d:.4s;--l:30%"></div>
+      <div class="beam" style="--d:.8s;--l:52%"></div>
+      <div class="beam" style="--d:1.2s;--l:70%"></div>
+      <div class="beam" style="--d:1.6s;--l:88%"></div>
+    </div>
+    <div class="particle-field" id="particleField"></div>
+  </div>
+  <div class="hero-content container">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      EMBEDDED SYSTEMS · OPTICAL NETWORKING · IoT
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line">Light-Fidelity</span>
+      <span class="title-line accent-text">Data Transfer</span>
+      <span class="title-line sub-line">System Platform</span>
+    </h1>
+    <p class="hero-desc">
+      Next-generation wireless communication using visible light spectrum.
+      Transmit data at speeds up to <strong>224 Gbps</strong> through LED photons —
+      zero RF interference, absolute physical security.
+    </p>
+    <div class="hero-cta">
+      <a href="#dashboard" class="btn btn-primary">
+        <span class="btn-glow"></span>
+        Launch Dashboard
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#architecture" class="btn btn-ghost">View Architecture</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-val">224</span><span class="hstat-unit">Gbps</span><span class="hstat-label">Max Speed</span></div>
+      <div class="hstat-sep"></div>
+      <div class="hstat"><span class="hstat-val">10K</span><span class="hstat-unit">×</span><span class="hstat-label">Faster than Wi-Fi</span></div>
+      <div class="hstat-sep"></div>
+      <div class="hstat"><span class="hstat-val">0</span><span class="hstat-unit">RF</span><span class="hstat-label">Interference</span></div>
+    </div>
+  </div>
+
+  <!-- Overview Cards -->
+  <div class="overview-grid container">
+    <div class="info-card" data-reveal>
+      <div class="card-icon">💡</div>
+      <h3>What is Li-Fi?</h3>
+      <p>Li-Fi (Light Fidelity) is a bidirectional, high-speed, and fully networked wireless communication technology using visible light, UV, and infrared spectrum. Coined by Prof. Harald Haas in 2011.</p>
+    </div>
+    <div class="info-card" data-reveal>
+      <div class="card-icon">⚡</div>
+      <h3>Advantages</h3>
+      <ul class="adv-list">
+        <li><span>◈</span> 100× faster than Wi-Fi</li>
+        <li><span>◈</span> Highly secure transmission</li>
+        <li><span>◈</span> No RF interference</li>
+        <li><span>◈</span> Works underwater</li>
+        <li><span>◈</span> Immune to hacking</li>
+        <li><span>◈</span> Eco-friendly LED based</li>
+      </ul>
+    </div>
+    <div class="info-card" data-reveal>
+      <div class="card-icon">🌐</div>
+      <h3>Applications</h3>
+      <ul class="adv-list">
+        <li><span>◈</span> Hospitals & Medical devices</li>
+        <li><span>◈</span> Aircraft cabin systems</li>
+        <li><span>◈</span> Underwater communication</li>
+        <li><span>◈</span> Smart retail & navigation</li>
+        <li><span>◈</span> Defence & military ops</li>
+        <li><span>◈</span> Smart city infrastructure</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ARCHITECTURE ═══════════════════ -->
+<section class="section arch-section" id="architecture">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">SYSTEM DESIGN</span>
+      <h2 class="section-title">System Architecture</h2>
+      <p class="section-sub">End-to-end optical data transfer pipeline with embedded microcontroller integration</p>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="arch-diagram">
+      <div class="arch-row transmitter-side">
+        <div class="arch-block sender-block">
+          <div class="arch-block-header">TRANSMITTER SIDE</div>
+          <div class="arch-components">
+            <div class="arch-comp" data-comp="mcu-tx">
+              <div class="comp-icon">⚙</div>
+              <div class="comp-body">
+                <span class="comp-name">Microcontroller</span>
+                <span class="comp-detail">ATmega328P / ESP32</span>
+              </div>
+              <div class="comp-port port-right"></div>
+            </div>
+            <div class="arch-arrow right">→</div>
+            <div class="arch-comp" data-comp="driver">
+              <div class="comp-icon">🔌</div>
+              <div class="comp-body">
+                <span class="comp-name">Driver Circuit</span>
+                <span class="comp-detail">PWM Modulator</span>
+              </div>
+              <div class="comp-port port-right"></div>
+            </div>
+            <div class="arch-arrow right">→</div>
+            <div class="arch-comp led-comp" data-comp="led">
+              <div class="comp-icon led-icon">💡</div>
+              <div class="comp-body">
+                <span class="comp-name">LED Transmitter</span>
+                <span class="comp-detail">High-Power LED Array</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optical Channel -->
+      <div class="optical-channel">
+        <div class="channel-label">OPTICAL CHANNEL — FREE SPACE PROPAGATION</div>
+        <div class="light-beams">
+          <div class="lbeam" style="--d:0s"></div>
+          <div class="lbeam" style="--d:.15s"></div>
+          <div class="lbeam" style="--d:.3s"></div>
+          <div class="lbeam" style="--d:.45s"></div>
+          <div class="lbeam" style="--d:.6s"></div>
+          <div class="lbeam" style="--d:.75s"></div>
+          <div class="lbeam" style="--d:.9s"></div>
+        </div>
+        <div class="channel-info">
+          <span>Visible Light Spectrum: 400–700 nm</span>
+          <span>Range: 1–10 meters</span>
+          <span>Medium: Air / Water</span>
+        </div>
+      </div>
+
+      <div class="arch-row receiver-side">
+        <div class="arch-block receiver-block">
+          <div class="arch-block-header">RECEIVER SIDE</div>
+          <div class="arch-components">
+            <div class="arch-comp photodiode-comp" data-comp="pd">
+              <div class="comp-icon">👁</div>
+              <div class="comp-body">
+                <span class="comp-name">Photodiode</span>
+                <span class="comp-detail">PIN / APD Receiver</span>
+              </div>
+              <div class="comp-port port-right"></div>
+            </div>
+            <div class="arch-arrow right">→</div>
+            <div class="arch-comp" data-comp="amp">
+              <div class="comp-icon">📡</div>
+              <div class="comp-body">
+                <span class="comp-name">Amplifier</span>
+                <span class="comp-detail">TIA + Filter Stage</span>
+              </div>
+              <div class="comp-port port-right"></div>
+            </div>
+            <div class="arch-arrow right">→</div>
+            <div class="arch-comp" data-comp="mcu-rx">
+              <div class="comp-icon">🖥</div>
+              <div class="comp-body">
+                <span class="comp-name">MCU + Display</span>
+                <span class="comp-detail">Decode & LCD/OLED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Component Cards -->
+    <div class="comp-grid">
+      <div class="comp-card" data-reveal>
+        <div class="cc-num">01</div>
+        <h4>LED Transmitter</h4>
+        <p>High-brightness LED array modulated at frequencies from 1 kHz to 100 MHz. Imperceptible to human eye — visible light carries encoded binary data streams.</p>
+        <div class="cc-spec">Wavelength: 450–700nm · Power: 1–10W</div>
+      </div>
+      <div class="comp-card" data-reveal>
+        <div class="cc-num">02</div>
+        <h4>Driver Circuit</h4>
+        <p>PWM-based LED driver with precision current control. Handles OOK (On-Off Keying) and OFDM modulation schemes for reliable high-speed encoding.</p>
+        <div class="cc-spec">Freq: up to 100MHz · Modulation: OOK/OFDM</div>
+      </div>
+      <div class="comp-card" data-reveal>
+        <div class="cc-num">03</div>
+        <h4>Optical Channel</h4>
+        <p>Free-space visible light propagation medium. Line-of-sight or diffuse transmission with multipath support in reflective environments.</p>
+        <div class="cc-spec">Range: 1–10m · Band: 400–700nm</div>
+      </div>
+      <div class="comp-card" data-reveal>
+        <div class="cc-num">04</div>
+        <h4>Photodiode Receiver</h4>
+        <p>Silicon PIN photodiode with avalanche gain option. Converts incident photons to electrical current with high sensitivity and fast response time.</p>
+        <div class="cc-spec">Responsivity: 0.5 A/W · BW: >200MHz</div>
+      </div>
+      <div class="comp-card" data-reveal>
+        <div class="cc-num">05</div>
+        <h4>Microcontroller</h4>
+        <p>Central processing unit managing both TX encoding and RX decoding. Handles framing, error correction (CRC), buffering, and protocol stack execution.</p>
+        <div class="cc-spec">MCU: ESP32 @ 240MHz · RAM: 520KB</div>
+      </div>
+      <div class="comp-card" data-reveal>
+        <div class="cc-num">06</div>
+        <h4>Display Module</h4>
+        <p>OLED/LCD display for real-time decoded message output and system diagnostics. Shows received data, BER metrics, and signal quality indicators.</p>
+        <div class="cc-spec">OLED: 128×64px · Interface: I2C/SPI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ DASHBOARD ═══════════════════ -->
+<section class="section dashboard-section" id="dashboard">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">CONTROL CENTER</span>
+      <h2 class="section-title">Data Transfer Dashboard</h2>
+      <p class="section-sub">Simulate Li-Fi transmission between transmitter and receiver modules</p>
+    </div>
+
+    <!-- Control Buttons -->
+    <div class="ctrl-bar">
+      <button class="ctrl-btn start-btn" id="startBtn" onclick="startTransmission()">
+        <span class="btn-icon">▶</span> Start Transmission
+      </button>
+      <button class="ctrl-btn stop-btn" id="stopBtn" onclick="stopTransmission()" disabled>
+        <span class="btn-icon">⏹</span> Stop Transmission
+      </button>
+      <button class="ctrl-btn clear-btn" onclick="clearData()">
+        <span class="btn-icon">⟳</span> Clear Data
+      </button>
+      <button class="ctrl-btn export-btn" onclick="exportReport()">
+        <span class="btn-icon">↓</span> Export Report
+      </button>
+    </div>
+
+    <!-- Panels -->
+    <div class="panel-grid">
+      <!-- Sender -->
+      <div class="panel sender-panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="panel-dot tx-dot"></span>
+            TRANSMITTER NODE
+          </div>
+          <div class="panel-status" id="txStatus">IDLE</div>
+        </div>
+        <div class="panel-body">
+          <label class="field-label">Message to Transmit</label>
+          <textarea
+            id="messageInput"
+            class="msg-input"
+            placeholder="Enter data to transmit via Li-Fi optical channel..."
+            maxlength="500"
+          ></textarea>
+          <div class="input-meta">
+            <span id="charCount" class="char-count">0 / 500</span>
+            <span id="inputError" class="input-error"></span>
+          </div>
+
+          <div class="tx-options">
+            <div class="opt-group">
+              <label class="opt-label">Modulation</label>
+              <select class="opt-select" id="modSelect">
+                <option value="OOK">OOK (On-Off Keying)</option>
+                <option value="OFDM" selected>OFDM</option>
+                <option value="PPM">PPM (Pulse Position)</option>
+                <option value="DPPM">DPPM</option>
+              </select>
+            </div>
+            <div class="opt-group">
+              <label class="opt-label">Data Rate</label>
+              <select class="opt-select" id="rateSelect">
+                <option value="1">1 Mbps</option>
+                <option value="10">10 Mbps</option>
+                <option value="100" selected>100 Mbps</option>
+                <option value="1000">1 Gbps</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+            <span class="send-glow"></span>
+            <span class="send-icon">⚡</span>
+            TRANSMIT VIA LIGHT
+          </button>
+
+          <div class="tx-viz" id="txViz">
+            <div class="led-array">
+              <div class="led-unit" id="led0"></div>
+              <div class="led-unit" id="led1"></div>
+              <div class="led-unit" id="led2"></div>
+              <div class="led-unit" id="led3"></div>
+              <div class="led-unit" id="led4"></div>
+              <div class="led-unit" id="led5"></div>
+              <div class="led-unit" id="led6"></div>
+              <div class="led-unit" id="led7"></div>
+            </div>
+            <div class="tx-label">LED Modulation Array</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transmission Channel Viz -->
+      <div class="channel-viz-panel">
+        <div class="cv-header">OPTICAL CHANNEL</div>
+        <div class="cv-body">
+          <div class="cv-led-tower">
+            <div class="tower-top"></div>
+            <div class="tower-body">
+              <div class="tower-led" id="towerLed"></div>
+            </div>
+          </div>
+          <div class="cv-stream" id="cvStream">
+            <div class="stream-track">
+              <div class="photon-packet" id="pp0"></div>
+              <div class="photon-packet" id="pp1"></div>
+              <div class="photon-packet" id="pp2"></div>
+            </div>
+            <div class="stream-label">Photon Stream</div>
+          </div>
+          <div class="cv-receiver">
+            <div class="pd-icon">⬟</div>
+            <div class="pd-label">PD</div>
+          </div>
+        </div>
+        <div class="cv-stats">
+          <div class="cv-stat"><span id="cvBps">— Mbps</span><label>Data Rate</label></div>
+          <div class="cv-stat"><span id="cvSig">—%</span><label>Signal</label></div>
+          <div class="cv-stat"><span id="cvBer">—</span><label>BER</label></div>
+        </div>
+      </div>
+
+      <!-- Receiver -->
+      <div class="panel receiver-panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="panel-dot rx-dot"></span>
+            RECEIVER NODE
+          </div>
+          <div class="panel-status" id="rxStatus">IDLE</div>
+        </div>
+        <div class="panel-body">
+          <label class="field-label">Received Messages</label>
+          <div class="received-log" id="receivedLog">
+            <div class="log-empty">
+              <span class="log-empty-icon">📡</span>
+              <span>Awaiting optical transmission...</span>
+            </div>
+          </div>
+
+          <div class="rx-metrics">
+            <div class="rx-metric">
+              <span class="rxm-label">Last Received</span>
+              <span class="rxm-val" id="lastRecTime">—</span>
+            </div>
+            <div class="rx-metric">
+              <span class="rxm-label">Bytes Received</span>
+              <span class="rxm-val" id="bytesRec">0 B</span>
+            </div>
+            <div class="rx-metric">
+              <span class="rxm-label">Integrity</span>
+              <span class="rxm-val integrity-ok" id="integrityStatus">GOOD</span>
+            </div>
+          </div>
+
+          <div class="decode-animation" id="decodeAnim">
+            <div class="decode-bar" style="--w:95%"></div>
+            <div class="decode-label">Decoding optical signal...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PERFORMANCE ═══════════════════ -->
+<section class="section perf-section" id="performance">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">METRICS</span>
+      <h2 class="section-title">Performance Monitoring</h2>
+      <p class="section-sub">Real-time system metrics and transmission quality indicators</p>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card" id="kpiDataRate">
+        <div class="kpi-ring">
+          <svg viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="34" class="ring-bg"/>
+            <circle cx="40" cy="40" r="34" class="ring-fill" id="ringDataRate"
+              stroke-dasharray="213.6" stroke-dashoffset="213.6"/>
+          </svg>
+          <span class="kpi-val" id="kpiDRVal">0</span>
+        </div>
+        <div class="kpi-info">
+          <span class="kpi-name">Data Rate</span>
+          <span class="kpi-unit">Mbps</span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiSignal">
+        <div class="kpi-ring">
+          <svg viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="34" class="ring-bg"/>
+            <circle cx="40" cy="40" r="34" class="ring-fill ring-signal" id="ringSig"
+              stroke-dasharray="213.6" stroke-dashoffset="213.6"/>
+          </svg>
+          <span class="kpi-val" id="kpiSigVal">0%</span>
+        </div>
+        <div class="kpi-info">
+          <span class="kpi-name">Signal Strength</span>
+          <span class="kpi-unit">Optical Power</span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiBER">
+        <div class="kpi-icon-wrap">
+          <span class="kpi-big-val" id="kpiBERVal">—</span>
+        </div>
+        <div class="kpi-info">
+          <span class="kpi-name">Bit Error Rate</span>
+          <span class="kpi-unit">errors/bit</span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiTime">
+        <div class="kpi-icon-wrap">
+          <span class="kpi-big-val" id="kpiTimeVal">0ms</span>
+        </div>
+        <div class="kpi-info">
+          <span class="kpi-name">Transfer Time</span>
+          <span class="kpi-unit">milliseconds</span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiPSR">
+        <div class="kpi-ring">
+          <svg viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="34" class="ring-bg"/>
+            <circle cx="40" cy="40" r="34" class="ring-fill ring-psr" id="ringPSR"
+              stroke-dasharray="213.6" stroke-dashoffset="213.6"/>
+          </svg>
+          <span class="kpi-val" id="kpiPSRVal">0%</span>
+        </div>
+        <div class="kpi-info">
+          <span class="kpi-name">Packet Success Rate</span>
+          <span class="kpi-unit">delivery ratio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Stats -->
+    <div class="stats-grid">
+      <div class="stat-card green" id="scSent">
+        <div class="sc-icon">↑</div>
+        <div class="sc-val" id="totalSent">0</div>
+        <div class="sc-label">Total Packets Sent</div>
+        <div class="sc-bar"><div class="sc-fill" id="sentFill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card cyan" id="scRec">
+        <div class="sc-icon">↓</div>
+        <div class="sc-val" id="totalRec">0</div>
+        <div class="sc-label">Total Packets Received</div>
+        <div class="sc-bar"><div class="sc-fill" id="recFill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card blue" id="scSuccess">
+        <div class="sc-icon">✓</div>
+        <div class="sc-val" id="totalSuccess">0</div>
+        <div class="sc-label">Successful Transfers</div>
+        <div class="sc-bar"><div class="sc-fill" id="successFill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card red" id="scFailed">
+        <div class="sc-icon">✕</div>
+        <div class="sc-val" id="totalFailed">0</div>
+        <div class="sc-label">Failed Transfers</div>
+        <div class="sc-bar"><div class="sc-fill" id="failedFill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CHARTS ═══════════════════ -->
+<section class="section charts-section" id="charts">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">ANALYTICS</span>
+      <h2 class="section-title">Live Transmission Analytics</h2>
+      <p class="section-sub">Real-time visualization of optical channel performance metrics</p>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card" data-reveal>
+        <div class="chart-header">
+          <h4>Transmission Speed</h4>
+          <span class="chart-badge" id="speedBadge">— Mbps</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="speedChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card" data-reveal>
+        <div class="chart-header">
+          <h4>Signal Strength</h4>
+          <span class="chart-badge" id="sigBadge">—%</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="signalChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card wide-chart" data-reveal>
+        <div class="chart-header">
+          <h4>Packet Delivery</h4>
+          <span class="chart-badge" id="pktBadge">0 packets</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="packetChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-text">Li<span class="accent">Fi</span>OS</span>
+        <p>Light-Fidelity Optical Data Transfer System — Embedded Systems Project</p>
+        <div class="footer-tags">
+          <span>ESP32</span><span>ATmega328P</span><span>Photonics</span><span>IoT</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5>Navigation</h5>
+        <a href="#home">Home</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#performance">Performance</a>
+        <a href="#charts">Analytics</a>
+      </div>
+      <div class="footer-tech">
+        <h5>Technology Stack</h5>
+        <div class="tech-stack">
+          <span class="tech-item">HTML5</span>
+          <span class="tech-item">CSS3</span>
+          <span class="tech-item">Vanilla JS ES6</span>
+          <span class="tech-item">Chart.js</span>
+          <span class="tech-item">Session Storage</span>
+          <span class="tech-item">CSS Grid</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 LiFiOS — Optical Communication Research Platform</span>
+      <span class="footer-pulse"><span class="fp-dot"></span> System Active</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Notification Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
